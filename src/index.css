@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Unbounded", sans-serif;
+}
+.basePage {
+  @apply pb-[42px] max-w-[390px] w-full h-fit flex flex-col justify-between text-white;
+}
+
+/* TEXT SIZE */
+
+.unboundedSmall {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 9px;
+}
+.unboundedMedium {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 12px;
+}
+.unboundedLarge {
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 37px;
+}
+
+/* BG TYPE */
+
+.mainBackground {
+  background: linear-gradient(270deg, #0565f7 0%, #87b7ff 100%), #333b4e;
+  box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.4);
+  border-color: linear-gradient(
+      270deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.3) 34%,
+      #ffffff 69%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    #333b4e;
+}
+.emptyBackground {
+  background: black/10;
+  box-shadow: inset 0px 0px 40px rgba(255, 255, 255, 0.6);
+  border-color: linear-gradient(
+      270deg,
+      #ffffff 0%,
+      rgba(255, 255, 255, 0.3) 34%,
+      #ffffff 69%,
+      rgba(255, 255, 255, 0.3) 100%
+    ),
+    #333b4e;
+}
+
+/* CLICK */
+
+.click-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.click-button img {
+  transition: transform 0.3s ease;
+  width: auto;
+}
+
+.click-button:active img {
+  transform: scale(0.9);
+}
+
+/* PROGRESSBAR */
+
+.percent {
+  position: relative;
+  width: 310px;
+  height: 310px;
+}
+
+.percent svg {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  transform: scale(-1, 1) rotate(-90deg);
+}
+
+.percent svg circle {
+  width: 310px;
+  height: 310px;
+  fill: none;
+  stroke-width: 10;
+  stroke: #000;
+  transform: translate(5px, 5px);
+  stroke-dasharray: 969;
+  stroke-linecap: round;
+}
+
+.percent svg circle.background {
+  stroke-dashoffset: 0;
+  stroke: rgba(255, 255, 255, 0.2);
+}
+
+.percent svg circle.progress {
+  stroke: url(#gradient);
+}
