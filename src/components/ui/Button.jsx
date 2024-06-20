@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-const UiButton = ({ className, size, type, children, extraText }) => {
+const UiButton = ({ className, size, type, children, extraText, onClick }) => {
   const btnClass = clsx(
     className,
     {
@@ -14,9 +14,9 @@ const UiButton = ({ className, size, type, children, extraText }) => {
   );
 
   return (
-    <button className={btnClass}>
+    <button className={btnClass} onClick={onClick}>
       {children}
-      <span className="text-just-blue font-medium">{extraText}</span>
+      <span className="text-just-blue font-medium ">{extraText}</span>
     </button>
   );
 };

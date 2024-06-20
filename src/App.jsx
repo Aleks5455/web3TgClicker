@@ -5,10 +5,16 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import HomePage from "./pages/HomePage";
+import FriendsPage from "./pages/FriendsPage";
 
 function App() {
   const router = createBrowserRouter(
-    createRoutesFromElements(<Route index element={<HomePage />} />)
+    createRoutesFromElements(
+      <Route path="/">
+        <Route path="/" element={<HomePage/>} />
+        <Route path="friends" element={<FriendsPage/>} />
+      </Route>
+    )
   );
   return <RouterProvider router={router} />;
 }
