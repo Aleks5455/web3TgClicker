@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import HomeIcon from '../../public/svg/HomeIcon.svg'; 
-import FriendsIcon from '../../public/svg/FriendsIcon.svg';
-import RatingIcon from '../../public/svg/RatingIcon.svg';
-import TasksIcon from '../../public/svg/TasksIcon.svg';
-import ShopIcon from "../../public/svg/ShopIcon.svg";
+import HomeIcon from '/svg/HomeIcon.svg'; 
+import FriendsIcon from '/svg/FriendsIcon.svg';
+import RatingIcon from '/svg/RatingIcon.svg';
+import TasksIcon from '/svg/TasksIcon.svg';
+import ShopIcon from "/svg/ShopIcon.svg";
 
 
 const NavBar = () => {

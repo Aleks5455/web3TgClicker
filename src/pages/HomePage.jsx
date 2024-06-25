@@ -1,47 +1,24 @@
-import MainBG from "/img/MainBg.png";
-import BalanceIcon from "/public/svg/JustBalance.svg";
-import ClickIcon from "/public/img/ClickIcon.png";
-import UiButton from "../components/ui/Button";
+import useGameLogic from "../utils/useGameLogic.js";
 import { formatNum } from "../utils/NumberConverter.js";
 import PercentCircle from "../components/ProgressCircle.jsx";
-import { useEffect, useState } from "react";
+import UiButton from "../components/ui/Button";
 import NavBar from "../components/NavBar.jsx";
+import BalanceIcon from "/svg/JustBalance.svg";
+import ClickIcon from "/img/ClickIcon.png";
+import MainBG from "/img/MainBg.png";
+
 
 const HomePage = () => {
-  // CLICK LOGIC
-
-  const maxEnergy = 1000;
-  const [currentEnergy, setCurrentEnergy] = useState(1000);
-  const [percent, setPercent] = useState(1000);
-  const [balance, setBalance] = useState(50000);
-  const [clickPower, setClickPower] = useState(6);
-  const [upCost, setUpCost] = useState(100);
-
-  const handleButtonClick = () => {
-    setPercent((percent) => Math.max(0, percent - clickPower));
-    setCurrentEnergy((curEn) => Math.max(0, curEn - clickPower));
-    if (currentEnergy > 0) {
-      if (currentEnergy <= clickPower) {
-        setBalance((balance) => balance + (currentEnergy - clickPower));
-      }
-      setBalance((balance) => balance + clickPower);
-    }
-  };
-  const forUpClick = () => {
-    if ( balance >= upCost * 1000){
-      setUpCost((upCost) => upCost + 25);
-      setBalance((balance) => balance - upCost * 1000);
-      setClickPower((clickPower) => clickPower + 1);
-    }
-  }
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setPercent((percent) => Math.min(1000, percent + 1));
-      setCurrentEnergy((curEn) => Math.min(1000, curEn + 1));
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
+  const {
+    maxEnergy,
+    currentEnergy,
+    percent,
+    balance,
+    clickPower,
+    upCost,
+    handleButtonClick,
+    forUpClick,
+  } = useGameLogic();
 
   //
 
@@ -106,7 +83,7 @@ const HomePage = () => {
         <span className="text-[#FBFBFB]">{currentEnergy}/</span>
         <span className="text-[#FBFBFB]/70">{maxEnergy}</span>
       </div>
-      <NavBar/>
+      <NavBar />
     </div>
   );
 };

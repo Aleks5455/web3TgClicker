@@ -1,5 +1,10 @@
+import useGameLogic from "../utils/useGameLogic";
+
 const PercentCircle = ({ percent }) => {
-  const maxValue = 1000;
+  const {
+    capacityLevel
+  }= useGameLogic();
+  const maxValue = 1000 * capacityLevel;
   const scaledPercent = (percent / maxValue) * 100;
   const strokeDashoffset = 969 - (969 * scaledPercent) / 100;
 
