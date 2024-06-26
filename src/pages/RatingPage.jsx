@@ -6,6 +6,7 @@ import EnergyRegeneration from "../components/EnergyRegeneration";
 import UiButton from "../components/ui/Button";
 import NavBar from "../components/NavBar";
 import MainBG from "/img/MainBg.png";
+import ShopTimers from "../components/ShopTimers"
 
 const RatingPage = () => {
   const [activeButton, setActiveButton] = useState("players");
@@ -13,6 +14,7 @@ const RatingPage = () => {
   return (
     <div className="basePage relative px-5 items-center">
       <EnergyRegeneration/>
+      <ShopTimers/>
       <img
         className="h-full w-full object-center object-cover absolute -z-10"
         src={MainBG}

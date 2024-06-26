@@ -6,7 +6,7 @@ import NavBar from "../components/NavBar.jsx";
 import BalanceIcon from "/svg/JustBalance.svg";
 import ClickIcon from "/img/ClickIcon.png";
 import MainBG from "/img/MainBg.png";
-
+import ShopTimers from "../components/ShopTimers"
 
 const HomePage = () => {
   const {
@@ -24,6 +24,7 @@ const HomePage = () => {
 
   return (
     <div className="basePage relative px-5 items-center">
+      <ShopTimers/>
       <img
         className="h-full w-full object-center object-cover absolute -z-10"
         src={MainBG}

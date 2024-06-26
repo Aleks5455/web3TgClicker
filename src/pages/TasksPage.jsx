@@ -1,16 +1,17 @@
 import { formatNum } from "../utils/NumberConverter.js";
 import { tasksArray } from "../utils/Tasks.js";
 import NavBar from "../components/NavBar";
-import EnergyRegeneration from "../components/EnergyRegeneration";
 import ArrowIcon from "/svg/ArrowIcon.svg";
 import TGIcon from "/svg/TGIcon.svg";
 import MainBG from "/img/MainBg.png";
-
+import EnergyRegeneration from "../components/EnergyRegeneration.jsx";
+import ShopTimers from "../components/ShopTimers"
 
 const TasksPage = () => {
   return (
     <div className="basePage relative px-5 items-center">
       <EnergyRegeneration/>
+      <ShopTimers/>
       <img
         className="h-full w-full object-center object-cover absolute -z-10"
         src={MainBG}

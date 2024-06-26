@@ -24,15 +24,14 @@ const [capacityLevel, setCapacityLevel] = useState(initialState.capacityLevel);
 const [rechargeLevel, setRechargeLevel] = useState(initialState.rechargeLevel);
 const maxEnergy = 1000 * capacityLevel;
 
-
   const handleButtonClick = () => {
-    setPercent((percent) => Math.max(0, percent - clickPower));
-    setCurrentEnergy((curEn) => Math.max(0, curEn - clickPower));
-    if (currentEnergy > 0) {
-      if (currentEnergy <= clickPower) {
-        setBalance((balance) => balance + (currentEnergy - clickPower));
-      }
-      setBalance((balance) => balance + clickPower);
+      setPercent((percent) => Math.max(0, percent - clickPower));
+      setCurrentEnergy((curEn) => Math.max(0, curEn - clickPower));
+      if (currentEnergy > 0) {
+        if (currentEnergy <= clickPower) {
+          setBalance((balance) => balance + (currentEnergy - clickPower));
+        }
+        setBalance((balance) => balance + clickPower);
     }
   };
 
@@ -80,7 +79,7 @@ const maxEnergy = 1000 * capacityLevel;
       capacityUpCost,
       rechargeUpCost,
     }));
-  }, [currentEnergy, percent, balance, clickPower, upCost, capacityLevel, rechargeLevel, capacityUpCost, rechargeUpCost ]);
+  }, [currentEnergy, percent, balance, clickPower, upCost, capacityLevel, rechargeLevel, capacityUpCost, rechargeUpCost]);
   
 
   return {
@@ -94,6 +93,8 @@ const maxEnergy = 1000 * capacityLevel;
     rechargeLevel,
     capacityUpCost,
     rechargeUpCost,
+    setPercent,
+    setCurrentEnergy,
     handleButtonClick,
     forUpClick,
     capacityClick,

@@ -1,8 +1,9 @@
 import { friendsArray } from "../utils/Friends";
-import EnergyRegeneration from "../components/EnergyRegeneration";
 import UiButton from "../components/ui/Button";
 import NavBar from "../components/NavBar";
 import MainBG from "/img/MainBg.png";
+import EnergyRegeneration from "../components/EnergyRegeneration";
+import ShopTimers from "../components/ShopTimers"
 
 const FriendsPage = () => {
   const totalIncome = Math.round(
@@ -11,6 +12,7 @@ const FriendsPage = () => {
   return (
     <div className="basePage relative px-5 items-center">
       <EnergyRegeneration/>
+      <ShopTimers/>
       <img
         className="h-full w-full object-center object-cover absolute -z-10"
         src={MainBG}
